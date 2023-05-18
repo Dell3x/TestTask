@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.ObjectPool
 {
-    public class InventoryObjectPool
+    public class InventoryObjectPool : MonoBehaviour
     {
         private List<InventoryItem> pool;
         private readonly InventoryItem prefab;
@@ -23,13 +23,15 @@ namespace Game.ObjectPool
                 {
                     if (!obj.gameObject.activeInHierarchy)
                     {
+                        Debug.Log("ss");
                         obj.gameObject.SetActive(true);
                         return obj;
                     }
                 }
             }
+            Debug.Log(pool.Count);
 
-            var newObject = Object.Instantiate(prefab, parentTransform);
+            var newObject = Instantiate(prefab, parentTransform);
             pool.Add(newObject);
             return newObject;
         }
