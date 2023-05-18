@@ -7,7 +7,7 @@ namespace Game.Shop
 {
     public class FruitShop : MonoBehaviour
     {
-        [SerializeField] private CurrencyManager currencyManager;
+        [SerializeField] private CurrencyManager _currencyManager;
         [SerializeField] private Actions.Actions _actions;
         [SerializeField] private GameObject _fruitPurchaseMenu;
 
@@ -36,7 +36,7 @@ namespace Game.Shop
 
         private void BuyFruit(Fruit fruit)
         {
-            if (currencyManager.IsEnoughMoney(fruit.Price))
+            if (_currencyManager.IsEnoughMoney(fruit.Price))
             {
                 _actions.ShopActions.RaiseSubstractCurrency(fruit.Price);
                 _actions.InventoryActions.RaiseAddItemToInventory(fruit);

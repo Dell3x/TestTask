@@ -29,8 +29,16 @@ public class VendorPoint : MonoBehaviour
 
     private void SellFruit(Fruit fruit)
     {
-        _actions.ShopActions.RaiseAddCurrency(fruit.Price);
-        _actions.InventoryActions.RaiseRemoveFromInventory(fruit);
+       var IsExistInInventory = _actions.InventoryActions.RaiseCheckIfExist(fruit.Name);
+       if (IsExistInInventory)
+       {
+           _actions.ShopActions.RaiseAddCurrency(fruit.Price);
+           _actions.InventoryActions.RaiseRemoveFromInventory(fruit);
+       }
+       else
+       {
+           Debug.Log("The item is not in the inventory!");
+       }
     }
     
     public void CloseFruitSellMenu()

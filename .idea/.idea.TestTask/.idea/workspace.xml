@@ -6,24 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e351809c-30de-43c2-8a91-c2dcfbd4f85b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TestTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Prefabs/UI/Inventory/InventoryPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Prefabs/UI/Inventory/InventoryPanel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Prefabs/UI/Shop/Fruit Item Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Prefabs/UI/Shop/Fruit Item Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Prefabs/UI/Shop/Shop Popup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Prefabs/UI/Shop/Shop Popup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Currency/CurrencyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Currency/CurrencyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/InventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/InventoryItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/InventoryObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/InventoryObjectPool.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/Views/InventoryView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/Views/InventoryView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/InventoryActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/InventoryActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/FruitItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/FruitShopItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/FruitItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/FruitShopItem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/FruitShop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/FruitShop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/ShopView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/ShopView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/ShopActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/ShopActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Vendor/VendorPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Vendor/VendorPoint.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +108,7 @@
       <workItem from="1684309206243" duration="1203000" />
       <workItem from="1684315281104" duration="10799000" />
       <workItem from="1684328482961" duration="8902000" />
-      <workItem from="1684392752281" duration="18066000" />
+      <workItem from="1684392752281" duration="19718000" />
     </task>
     <servers />
   </component>

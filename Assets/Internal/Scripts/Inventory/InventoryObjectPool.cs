@@ -44,9 +44,9 @@ namespace Game.ObjectPool
             }
         }
 
-        public void CheckIfExist(string fruitName)
+        public bool CheckIfExist(string fruitName)
         {
-            var inventoryItem = pool.FirstOrDefault(i => i.FruitName.text == fruitName);
+            return pool.Any(item => item.FruitName.text == fruitName && item.gameObject.activeSelf);
         }
     }
 }

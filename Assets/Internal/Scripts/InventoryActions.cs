@@ -8,6 +8,7 @@ namespace Game.Actions
     {
         public Action<Fruit> OnAddItemToInventory;
         public Action<Fruit> OnRemoveItemFromInventory;
+        public Func<string, bool> OnCheckIfExist;
 
         public void RaiseAddItemToInventory(Fruit fruit)
         {
@@ -17,6 +18,12 @@ namespace Game.Actions
         public void RaiseRemoveFromInventory(Fruit fruit)
         {
             OnRemoveItemFromInventory?.Invoke(fruit);
+        }
+
+        public bool RaiseCheckIfExist(string fruitName)
+        {
+            var isItemExist = OnCheckIfExist?.Invoke(fruitName);
+            return (bool)isItemExist;
         }
     }
 }

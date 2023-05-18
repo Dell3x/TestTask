@@ -19,12 +19,14 @@ public sealed class InventoryView : MonoBehaviour
         _fruits = new InventoryObjectPool(_inventoryItemPrefab);
         _actions.InventoryActions.OnAddItemToInventory += AddFruit;
         _actions.InventoryActions.OnRemoveItemFromInventory += RemoveFruit;
+        _actions.InventoryActions.OnCheckIfExist += CheckItemInInventory;
     }
 
     private void OnDisable()
     {
         _actions.InventoryActions.OnAddItemToInventory -= AddFruit;
         _actions.InventoryActions.OnRemoveItemFromInventory -= RemoveFruit;
+        _actions.InventoryActions.OnCheckIfExist += CheckItemInInventory;
     }
 
     public void ShowInventory()
@@ -50,6 +52,12 @@ public sealed class InventoryView : MonoBehaviour
     private void RemoveFruit(Fruit fruit)
     {
         _fruits.ReturnObjectToPool(fruit.Name);
+    }
+
+    private bool CheckItemInInventory(string fruitName)
+    {
+        var isExist = _fruits.CheckIfExist(fruitName);
+        return isExist;
     }
     
 }
