@@ -34345,6 +34345,17 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 538157800}
+--- !u!114 &445996571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7663333130418336352, guid: 76215786603e45246b010a4756f85d46, type: 3}
+  m_PrefabInstance: {fileID: 8167449938333555337}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &509831210
 GameObject:
   m_ObjectHideFlags: 0
@@ -44336,7 +44347,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842172660}
-  - component: {fileID: 842172661}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -44363,18 +44373,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &842172661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842172659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd22bcc9ad77c542acddbba4ffd98a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &846079868
 GameObject:
   m_ObjectHideFlags: 0
@@ -44513,7 +44511,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 1
+  m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -49344,7 +49342,7 @@ GameObject:
   - component: {fileID: 1030798816}
   - component: {fileID: 1030798815}
   m_Layer: 0
-  m_Name: Shop Point
+  m_Name: Vendor Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49380,6 +49378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actions: {fileID: 11400000, guid: 2c1a27ebe3bfe444caa275a37195ec7c, type: 2}
   _fruitSellMenu: {fileID: 7721634947750001354}
+  _sellButton: {fileID: 445996571}
 --- !u!135 &1030798816
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59095,8 +59094,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1232499903}
   - component: {fileID: 1232499904}
-  - component: {fileID: 1232499905}
   - component: {fileID: 1232499906}
+  - component: {fileID: 1232499905}
   m_Layer: 0
   m_Name: CM FreeLook1
   m_TagString: Untagged
@@ -59163,7 +59162,7 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.5
     m_SpeedMode: 0
-    m_MaxSpeed: 0.8
+    m_MaxSpeed: 0
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
@@ -59187,7 +59186,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 120
+    m_MaxSpeed: 0
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -59251,9 +59250,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232499902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae406acf25c19b0468409ae159160a78, type: 3}
+  m_Script: {fileID: 11500000, guid: f587bc2cd4af9be438be23782f8e70a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freeLookCamera: {fileID: 1232499904}
+  _xAxisSpeed: 120
+  _yAxisSpeed: 0.8
 --- !u!1 &1362551200
 GameObject:
   m_ObjectHideFlags: 0
@@ -84333,7 +84335,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951396938}
-  m_LocalRotation: {x: 0.070889026, y: -0.000000016644083, z: 0.0000000011828587, w: 0.9974842}
+  m_LocalRotation: {x: 0.07088901, y: 0.000000018227158, z: -0.0000000012953639, w: 0.9974842}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -89302,7 +89304,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008085799}
-  m_LocalRotation: {x: -0.07900318, y: 0.0000000042881503, z: 3.3983966e-10, w: 0.9968744}
+  m_LocalRotation: {x: -0.07900318, y: -0.0000000042881503, z: -3.3983966e-10, w: 0.9968744}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -108996,7 +108998,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1803848068185161875, guid: ff1a2e673284a414babaab264f4543dc, type: 3}
       propertyPath: m_Name
-      value: Shop Button
+      value: Inventory Button
       objectReference: {fileID: 0}
     - target: {fileID: 4922872560370102267, guid: ff1a2e673284a414babaab264f4543dc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -162674,6 +162676,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1553332247}
     m_Modifications:
+    - target: {fileID: 1809609854634731795, guid: 76215786603e45246b010a4756f85d46, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1905126412036119336, guid: 76215786603e45246b010a4756f85d46, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -162762,10 +162768,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vendor Popup
       objectReference: {fileID: 0}
+    - target: {fileID: 4251170915429535591, guid: 76215786603e45246b010a4756f85d46, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 212.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6975417151679689050, guid: 76215786603e45246b010a4756f85d46, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7710439382099930694}
+    - target: {fileID: 7663333130418336352, guid: 76215786603e45246b010a4756f85d46, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1030798815}
+    - target: {fileID: 7663333130418336352, guid: 76215786603e45246b010a4756f85d46, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenFruitSellMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663333130418336352, guid: 76215786603e45246b010a4756f85d46, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VendorPoint, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8610343611453671952, guid: 76215786603e45246b010a4756f85d46, type: 3}
       propertyPath: _actions
       value: 
