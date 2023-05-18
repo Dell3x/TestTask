@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebfc63ff35917847922c1c79aab1b2b, type: 3}
+  m_Name: Shop Data
+  m_EditorClassIdentifier: 
+  _fruitsList:
+  - Name: Orange
+    Price: 20
+    FruitImage: {fileID: 21300000, guid: 6fc31519aded24a839c1af9e163b6c01, type: 3}
+  - Name: Bananas
+    Price: 3
+    FruitImage: {fileID: 21300000, guid: 50e0347d981414d189ff77217bc6e69c, type: 3}
+  - Name: Avocado
+    Price: 50
+    FruitImage: {fileID: 21300000, guid: 0b97d02305ef74e7ea0cb413d9cc158a, type: 3}
+  - Name: Lemon
+    Price: 10
+    FruitImage: {fileID: 21300000, guid: f6d5f58465fff456eb84bd071b3134b9, type: 3}
+  - Name: Pineapple
+    Price: 60
+    FruitImage: {fileID: 21300000, guid: a2e86a433aa8b49018db7c80923744bd, type: 3}
+  - Name: Apple
+    Price: 15
+    FruitImage: {fileID: 21300000, guid: 2aa6ab62866ce4439ab7303f7da55e51, type: 3}
+  - Name: Granat
+    Price: 35
+    FruitImage: {fileID: 21300000, guid: af559321fb6ed4843b3012b08adfebb9, type: 3}
+  - Name: Kiwi
+    Price: 40
+    FruitImage: {fileID: 21300000, guid: cc8eede50ee1f49efa314de75e5506e3, type: 3}
+  - Name: Watermelon
+    Price: 80
+    FruitImage: {fileID: 21300000, guid: cc8eede50ee1f49efa314de75e5506e3, type: 3}
