@@ -1,3 +1,4 @@
+using System;
 using Game.Actions;
 using TMPro;
 using UnityEngine;
@@ -25,6 +26,12 @@ public class FruitShopItem : MonoBehaviour
             _sellButton.gameObject.SetActive(true);
             _sellButton.onClick.AddListener(OnSellButtonClicked);
         }
+    }
+
+    private void OnDisable()
+    {
+        _buyButton.onClick.RemoveAllListeners();
+        _sellButton.onClick.RemoveAllListeners();
     }
 
     private void OnBuyButtonClicked()

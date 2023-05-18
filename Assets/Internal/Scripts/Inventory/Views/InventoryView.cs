@@ -45,7 +45,6 @@ public sealed class InventoryView : MonoBehaviour
     
     private void AddFruit(Fruit fruit)
     {
-        Debug.Log("SSSSSS");
         var inventoryItem = _fruits.GetObjectFromPool(_contentTransform);
         inventoryItem.InitializeItem(fruit.Name, fruit.FruitImage);
     }

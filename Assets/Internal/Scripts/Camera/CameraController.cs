@@ -4,7 +4,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CameraaController : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     [SerializeField] private  CinemachineFreeLook freeLookCamera;
     [SerializeField] private float _xAxisSpeed;
@@ -33,6 +33,7 @@ public class CameraaController : MonoBehaviour
         {
             DisableCamera();
         }
+
     }
 
     private void EnableCamera()
