@@ -7,7 +7,9 @@ namespace Game.Actions
     public class ShopActions : ScriptableObject
     {
         public Action<int> OnSubsctractCurrency;
+        public Action<int> OnAddCurrency;
         public Action<Fruit> OnBuyNewFruit;
+        public Action<Fruit> OnSellFruit;
 
         public void RaiseSubstractCurrency(int currency)
         {
@@ -17,6 +19,16 @@ namespace Game.Actions
         public void RaiseBuyNewFruit(Fruit fruit)
         {
             OnBuyNewFruit?.Invoke(fruit);
+        }
+
+        public void RaiseAddCurrency(int currency)
+        {
+            OnAddCurrency?.Invoke(currency);
+        }
+
+        public void RaiseSellFruit(Fruit fruit)
+        {
+            OnSellFruit?.Invoke(fruit);
         }
 
     }

@@ -13,24 +13,26 @@ namespace Game.Managers
         private void Awake()
         {
             _actions.ShopActions.OnSubsctractCurrency += SubtractCurrency;
+            _actions.ShopActions.OnAddCurrency += UpdateCurrencyAmount;
             InitializeStartCurrency();
         }
 
         private void OnDisable()
         {
             _actions.ShopActions.OnSubsctractCurrency -= SubtractCurrency;
+            _actions.ShopActions.OnAddCurrency -= UpdateCurrencyAmount;
         }
 
         private void AddCurrency(int amount)
         {
             _currencyAmount += amount;
-            UpdateCurrency();
+            UpdateCurrencyText();
         }
 
         private void SubtractCurrency(int amount)
         {
             _currencyAmount -= amount;
-            UpdateCurrency();
+            UpdateCurrencyText();
         }
 
         public bool IsEnoughMoney(int price)
@@ -46,12 +48,18 @@ namespace Game.Managers
         private void InitializeStartCurrency()
         {
             _currencyAmount = 100;
-            UpdateCurrency();
+            UpdateCurrencyText();
         }
 
-        private void UpdateCurrency()
+        private void UpdateCurrencyText()
         {
             _currencyText.text = $"{_currencyAmount}";
+        }
+
+        private void UpdateCurrencyAmount(int currency)
+        {
+            _currencyAmount += currency;
+            UpdateCurrencyText();
         }
     }
 }

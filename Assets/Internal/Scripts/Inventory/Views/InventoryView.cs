@@ -10,28 +10,46 @@ public sealed class InventoryView : MonoBehaviour
     [SerializeField] private Actions _actions;
     [SerializeField] private Transform _contentTransform;
     [SerializeField] private InventoryItem _inventoryItemPrefab;
+    [SerializeField] private CanvasGroup _canvasGroup;
 
-    private InventoryObjectPool<InventoryItem> _fruits;
+    private InventoryObjectPool _fruits;
 
     private void Awake()
     {
-        _fruits = new InventoryObjectPool<InventoryItem>(_inventoryItemPrefab);
+        _fruits = new InventoryObjectPool(_inventoryItemPrefab);
         _actions.InventoryActions.OnAddItemToInventory += AddFruit;
+        _actions.InventoryActions.OnRemoveItemFromInventory += RemoveFruit;
     }
 
     private void OnDisable()
     {
         _actions.InventoryActions.OnAddItemToInventory -= AddFruit;
+        _actions.InventoryActions.OnRemoveItemFromInventory -= RemoveFruit;
     }
 
+    public void ShowInventory()
+    {
+        _canvasGroup.alpha = 1;
+        _canvasGroup.interactable = true;
+        _canvasGroup.blocksRaycasts = true;
+    }
+    
+    public void HideInventory()
+    {
+        _canvasGroup.alpha = 0;
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
+    }
+    
     private void AddFruit(Fruit fruit)
     {
         var inventoryItem = _fruits.GetObjectFromPool(_contentTransform);
         inventoryItem.InitializeItem(fruit.Name, fruit.FruitImage);
     }
 
-    public void RemoveFruit(InventoryItem fruit)
+    private void RemoveFruit(Fruit fruit)
     {
-        _fruits.ReturnObjectToPool(fruit);
+        _fruits.ReturnObjectToPool(fruit.Name);
     }
+    
 }

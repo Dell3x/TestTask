@@ -3,8 +3,9 @@ using UnityEngine;
 public sealed class ShopView : MonoBehaviour
 {
     [SerializeField] private ShopData _availableFruits;
-    [SerializeField] private FruitItem _fruitItem;
+    [SerializeField] private FruitShopItem fruitShopItem;
     [SerializeField] private Transform _fruitsContent;
+    [SerializeField] private bool _isBuyShop;
 
     private void Start()
     {
@@ -15,8 +16,8 @@ public sealed class ShopView : MonoBehaviour
     {
         foreach (var fruit in _availableFruits._fruitsList)
         {
-            var fruitItem = Instantiate(_fruitItem, _fruitsContent);
-            fruitItem.initializeItem(fruit.Name, fruit.Price, fruit.FruitImage);
+            var fruitItem = Instantiate(fruitShopItem, _fruitsContent);
+            fruitItem.initializeItem(fruit.Name, fruit.Price, fruit.FruitImage, _isBuyShop);
         }
     }
 

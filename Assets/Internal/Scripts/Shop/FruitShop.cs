@@ -1,8 +1,7 @@
-using System;
-using System.Collections.Generic;
 using Game.Managers;
 using Game.Unit;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Shop
 {
@@ -10,7 +9,7 @@ namespace Game.Shop
     {
         [SerializeField] private CurrencyManager currencyManager;
         [SerializeField] private Actions.Actions _actions;
-        [SerializeField] private GameObject fruitPurchaseMenu;
+        [SerializeField] private GameObject _fruitPurchaseMenu;
 
         private void Awake()
         {
@@ -32,7 +31,7 @@ namespace Game.Shop
 
         private void OpenFruitPurchaseMenu()
         {
-            fruitPurchaseMenu.SetActive(true);
+            _fruitPurchaseMenu.SetActive(true);
         }
 
         private void BuyFruit(Fruit fruit)
@@ -51,7 +50,7 @@ namespace Game.Shop
 
         public void CloseFruitPurchaseMenu()
         {
-            fruitPurchaseMenu.SetActive(false);
+            _fruitPurchaseMenu.SetActive(false);
         }
     }
 }

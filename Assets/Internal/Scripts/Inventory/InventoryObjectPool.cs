@@ -1,24 +1,25 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Game.ObjectPool
 {
-    public class InventoryObjectPool<T> where T : MonoBehaviour
+    public class InventoryObjectPool : MonoBehaviour
     {
-        private readonly List<T> pool;
-        private readonly T prefab;
-        
-        public InventoryObjectPool(T prefab)
+        private List<InventoryItem> pool;
+        private readonly InventoryItem prefab;
+
+        public InventoryObjectPool(InventoryItem prefab)
         {
             this.prefab = prefab;
-            pool = new List<T>();
+            pool = new List<InventoryItem>();
         }
 
-        public T GetObjectFromPool(Transform parentTransform)
+        public InventoryItem GetObjectFromPool(Transform parentTransform = null)
         {
             if (pool != null)
             {
-                foreach (T obj in pool)
+                foreach (InventoryItem obj in pool)
                 {
                     if (!obj.gameObject.activeInHierarchy)
                     {
@@ -33,9 +34,19 @@ namespace Game.ObjectPool
             return newObject;
         }
 
-        public void ReturnObjectToPool(T obj)
+        public void ReturnObjectToPool(string fruitName)
         {
-            obj.gameObject.SetActive(false);
+            var inventoryItem = pool.FirstOrDefault(i => i.FruitName.text == fruitName);
+            if (inventoryItem != null)
+            {
+                pool.Remove(inventoryItem);
+                inventoryItem.gameObject.SetActive(false);
+            }
+        }
+
+        public void CheckIfExist(string fruitName)
+        {
+            var inventoryItem = pool.FirstOrDefault(i => i.FruitName.text == fruitName);
         }
     }
 }

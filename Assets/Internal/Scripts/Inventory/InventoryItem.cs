@@ -12,4 +12,9 @@ public class InventoryItem : MonoBehaviour
         _fruitName.text = fruitName;
         _fruitImage.sprite = fruitImage;
     }
+
+    public TMP_Text FruitName
+    {
+        get => _fruitName;
+    }
 }
