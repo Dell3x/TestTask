@@ -1,7 +1,9 @@
+using System;
 using Game.Managers;
 using Game.Unit;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Game.Shop
 {
@@ -10,6 +12,7 @@ namespace Game.Shop
         [SerializeField] private CurrencyManager _currencyManager;
         [SerializeField] private Actions.Actions _actions;
         [SerializeField] private GameObject _fruitPurchaseMenu;
+        [SerializeField] private Button _shopButton;
 
         private void Awake()
         {
@@ -20,18 +23,42 @@ namespace Game.Shop
         {
             _actions.ShopActions.OnBuyNewFruit -= BuyFruit;
         }
+        
+        public void OpenFruitPurchaseMenu()
+        {
+            _fruitPurchaseMenu.SetActive(true);
+        }
+        
+        public void CloseFruitPurchaseMenu()
+        {
+            _fruitPurchaseMenu.SetActive(false);
+        }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent<UnitMovement>(out UnitMovement unit))
             {
-                OpenFruitPurchaseMenu();
+                ShowShopButton();
             }
         }
 
-        private void OpenFruitPurchaseMenu()
+        private void OnTriggerExit(Collider other)
         {
-            _fruitPurchaseMenu.SetActive(true);
+            if (other.TryGetComponent<UnitMovement>(out UnitMovement unit))
+            {
+                HideShopButton();
+                CloseFruitPurchaseMenu();
+            }
+        }
+
+        private void ShowShopButton()
+        {
+            _shopButton.gameObject.SetActive(true);
+        }
+
+        private void HideShopButton()
+        {
+            _shopButton.gameObject.SetActive(false);
         }
 
         private void BuyFruit(Fruit fruit)
@@ -48,9 +75,6 @@ namespace Game.Shop
             }
         }
 
-        public void CloseFruitPurchaseMenu()
-        {
-            _fruitPurchaseMenu.SetActive(false);
-        }
+       
     }
 }

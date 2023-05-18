@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.ObjectPool
 {
-    public class InventoryObjectPool : MonoBehaviour
+    public class InventoryObjectPool
     {
         private List<InventoryItem> pool;
         private readonly InventoryItem prefab;

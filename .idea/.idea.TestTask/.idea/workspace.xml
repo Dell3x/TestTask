@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e351809c-30de-43c2-8a91-c2dcfbd4f85b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TestTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/InventoryObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/InventoryObjectPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/Views/InventoryView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Inventory/Views/InventoryView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/InventoryActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/InventoryActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/FruitShop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Shop/FruitShop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal/Scripts/Vendor/VendorPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal/Scripts/Vendor/VendorPoint.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e351809c-30de-43c2-8a91-c2dcfbd4f85b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

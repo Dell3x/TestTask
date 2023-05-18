@@ -1,10 +1,14 @@
+using System;
 using Game.Actions;
 using Game.Unit;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class VendorPoint : MonoBehaviour
 {
     [SerializeField] private Actions _actions;
     [SerializeField] private GameObject _fruitSellMenu;
+    [SerializeField] private Button _sellButton;
 
     private void Awake()
     {
@@ -19,12 +23,32 @@ public class VendorPoint : MonoBehaviour
     {
         if (other.TryGetComponent<UnitMovement>(out UnitMovement unit))
         {
-            OpenFruitSellMenu();
+            ShowVendorButton();
         }
     }
-    private void OpenFruitSellMenu()
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent<UnitMovement>(out UnitMovement unit))
+        {
+            HideVendorButton();
+            CloseFruitSellMenu();
+        }
+    }
+
+    public void OpenFruitSellMenu()
     {
         _fruitSellMenu.SetActive(true);
+    }
+    
+    private void ShowVendorButton()
+    {
+        _sellButton.gameObject.SetActive(true);
+    }
+
+    private void HideVendorButton()
+    {
+        _sellButton.gameObject.SetActive(false);
     }
 
     private void SellFruit(Fruit fruit)

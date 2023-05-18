@@ -34,7 +34,6 @@ public class FruitShopItem : MonoBehaviour
         fruit.Price = int.Parse(_fruitCost.text);
         fruit.FruitImage = _fruitImage.sprite;
         _actions.ShopActions.RaiseBuyNewFruit(fruit);
-        Debug.Log("Buy");
     }
 
     private void OnSellButtonClicked()
