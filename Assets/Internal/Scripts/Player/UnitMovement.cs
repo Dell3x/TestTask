@@ -14,8 +14,8 @@ namespace Game.Unit
         private const string _IsWalking = "isWalking";
 
         private Vector2 _playerInput;
-        private float angleSmoothVelocity;
-        private float angleSmoothTime = 0.1f;
+        private float _angleSmoothVelocity;
+        private readonly float _angleSmoothTime = 0.1f;
 
         private void Update()   
         {
@@ -32,8 +32,8 @@ namespace Game.Unit
             var direction = new Vector3(_playerInput.x, 0f, _playerInput.y).normalized;
             
             var targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _camera.eulerAngles.y;
-            float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref angleSmoothVelocity,
-                angleSmoothTime);
+            var smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _angleSmoothVelocity,
+                _angleSmoothTime);
 
             var moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             

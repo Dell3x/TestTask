@@ -1,16 +1,15 @@
-using System;
-using Game.Managers;
+using Game.Controllers;
+using Game.GameActions;
 using Game.Unit;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Game.Shop
 {
     public class FruitShop : MonoBehaviour
     {
-        [SerializeField] private CurrencyManager _currencyManager;
-        [SerializeField] private Actions.Actions _actions;
+        [SerializeField] private CurrencyController _currencyController;
+        [SerializeField] private Actions _actions;
         [SerializeField] private GameObject _fruitPurchaseMenu;
         [SerializeField] private Button _shopButton;
 
@@ -36,7 +35,7 @@ namespace Game.Shop
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent<UnitMovement>(out UnitMovement unit))
+            if (other.TryGetComponent<UnitMovement>(out var unit))
             {
                 ShowShopButton();
             }
@@ -44,7 +43,7 @@ namespace Game.Shop
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.TryGetComponent<UnitMovement>(out UnitMovement unit))
+            if (other.TryGetComponent<UnitMovement>(out var unit))
             {
                 HideShopButton();
                 CloseFruitPurchaseMenu();
@@ -63,18 +62,15 @@ namespace Game.Shop
 
         private void BuyFruit(Fruit fruit)
         {
-            if (_currencyManager.IsEnoughMoney(fruit.Price))
+            if (_currencyController.IsEnoughMoney(fruit.Price))
             {
                 _actions.ShopActions.RaiseSubstractCurrency(fruit.Price);
                 _actions.InventoryActions.RaiseAddItemToInventory(fruit);
-                
             }
             else
             {
                 Debug.Log("Not enough currency to buy this fruit!");
             }
         }
-
-       
     }
 }

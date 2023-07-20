@@ -1,31 +1,32 @@
-using System;
 using TMPro;
 using UnityEngine;
+using Game.GameActions;
 
-namespace Game.Managers
+namespace Game.Controllers
 {
-    public class CurrencyManager : MonoBehaviour
+    public class CurrencyController : MonoBehaviour
     {
-        [SerializeField] private Actions.Actions _actions;
+        [SerializeField] private Actions _actions;
         [SerializeField] private TMP_Text _currencyText;
+        
         private int _currencyAmount;
 
         private void Awake()
         {
             _actions.ShopActions.OnSubsctractCurrency += SubtractCurrency;
-            _actions.ShopActions.OnAddCurrency += UpdateCurrencyAmount;
+            _actions.ShopActions.OnAddCurrency += AddCurrency;
             InitializeStartCurrency();
         }
 
         private void OnDisable()
         {
             _actions.ShopActions.OnSubsctractCurrency -= SubtractCurrency;
-            _actions.ShopActions.OnAddCurrency -= UpdateCurrencyAmount;
+            _actions.ShopActions.OnAddCurrency -= AddCurrency;
         }
 
-        private void AddCurrency(int amount)
+        private void AddCurrency(int currency)
         {
-            _currencyAmount += amount;
+            _currencyAmount += currency;
             UpdateCurrencyText();
         }
 
@@ -54,12 +55,6 @@ namespace Game.Managers
         private void UpdateCurrencyText()
         {
             _currencyText.text = $"{_currencyAmount}";
-        }
-
-        private void UpdateCurrencyAmount(int currency)
-        {
-            _currencyAmount += currency;
-            UpdateCurrencyText();
         }
     }
 }

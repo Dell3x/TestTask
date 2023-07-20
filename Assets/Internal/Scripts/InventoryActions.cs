@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Game.Actions
+namespace Game.GameActions
 {
     [CreateAssetMenu(fileName = "InventoryActions", menuName = "Game/Actions/InventoryActions")]
     public class InventoryActions : ScriptableObject

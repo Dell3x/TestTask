@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Game.Actions
+namespace Game.GameActions
 {
     [CreateAssetMenu(fileName = "ShopActions", menuName = "Game/Actions/ShopActions")]
     public class ShopActions : ScriptableObject

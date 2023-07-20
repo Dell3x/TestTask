@@ -4,22 +4,22 @@ using UnityEngine;
 
 namespace Game.ObjectPool
 {
-    public class InventoryObjectPool
+    public sealed class InventoryObjectPool
     {
-        private List<InventoryItem> pool;
-        private readonly InventoryItem prefab;
+        private List<InventoryItem> _pool;
+        private readonly InventoryItem _inventoryPrefab;
 
-        public InventoryObjectPool(InventoryItem prefab)
+        public InventoryObjectPool(InventoryItem inventoryPrefab)
         {
-            this.prefab = prefab;
-            pool = new List<InventoryItem>();
+            _inventoryPrefab = inventoryPrefab;
+            _pool = new List<InventoryItem>();
         }
 
         public InventoryItem GetObjectFromPool(Transform parentTransform = null)
         {
-            if (pool != null)
+            if (_pool != null)
             {
-                foreach (InventoryItem obj in pool)
+                foreach (InventoryItem obj in _pool)
                 {
                     if (!obj.gameObject.activeInHierarchy)
                     {
@@ -29,14 +29,14 @@ namespace Game.ObjectPool
                 }
             }
 
-            var newObject = Object.Instantiate(prefab, parentTransform);
-            pool.Add(newObject);
+            var newObject = Object.Instantiate(_inventoryPrefab, parentTransform);
+            _pool.Add(newObject);
             return newObject;
         }
 
         public void ReturnObjectToPool(string fruitName)
         {
-            var inventoryItem = pool.FirstOrDefault(i => i.FruitName.text == fruitName && i.gameObject.activeInHierarchy);
+            var inventoryItem = _pool.FirstOrDefault(i => i.FruitName.text == fruitName && i.gameObject.activeInHierarchy);
             if (inventoryItem != null)
             {
                 inventoryItem.gameObject.SetActive(false);
@@ -45,7 +45,7 @@ namespace Game.ObjectPool
 
         public bool CheckIfExist(string fruitName)
         {
-            return pool.Any(item => item.FruitName.text == fruitName && item.gameObject.activeSelf);
+            return _pool.Any(item => item.FruitName.text == fruitName && item.gameObject.activeSelf);
         }
     }
 }
